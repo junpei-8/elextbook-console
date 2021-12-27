@@ -1,0 +1,25 @@
+@use '@material-lite/theming' as *;
+@forward '@material-lite/theming';
+
+$primary-palette:   define-palette($purple-palette);
+$secondary-palette: define-palette($light-green-palette);
+$accent-palette:    define-palette($indigo-palette);
+$warn-palette:      define-palette($red-palette);
+
+
+$material-lite: (
+  default: define-light-theme((
+    color: (
+      primary:   $primary-palette,
+      secondary: $secondary-palette,
+      accent:    $accent-palette,
+      warn:      $warn-palette
+    )
+  )),
+
+  '.dark-theme': define-dark-theme(),
+
+  config: (
+    includes: (button, ripple)
+  )
+);

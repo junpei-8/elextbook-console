@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@use './app/media-query' as *;
+@use './app/root-styles/tag';
+@use './app/root-styles/header';
+@use './app/root-styles/main';
+@use './app/root-styles/utility-class';
+@use './app/views/home/home.component';
+
+@use './app/ml-theme' as ml;
+@use './app/mat-theme' as mat;
+
+
+@include ml.core();
+@include ml.themes();
+
+
+@include mat.core();
+
+@include mat.core-theme(mat.$light-theme);
+@include mat.button-theme(mat.$light-theme);
+@include mat.slide-toggle-theme(mat.$light-theme);
+@include mat.input-theme(mat.$light-theme);
+@include mat.form-field-theme(mat.$light-theme);
+
+.dark-theme {
+  @include mat.core-color(mat.$dark-theme);
+  @include mat.button-theme(mat.$dark-theme);
+  @include mat.slide-toggle-theme(mat.$dark-theme);
+  @include mat.input-theme(mat.$dark-theme);
+  @include mat.form-field-theme(mat.$dark-theme);  
+}
+
+
+body {
+  @extend .mat-app-background;
+}
+
+body, .mat-button {
+  font-family: "Noto Sans JP", "Roboto", Helvetica, Arial, sans-serif;
+}

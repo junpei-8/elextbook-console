@@ -1,0 +1,50 @@
+.hp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &-heading {
+    font-size: 24px;
+    margin: 48px 0 4px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &-link {
+    margin: 0 auto 16px 0;
+  }
+
+  &-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 8px 4px;
+
+    color: rgba(black, 0.6);
+    .dark-theme & {
+      color: rgba(white, 0.8);
+    }
+  }
+
+  &-href {
+    font-size: 14px;
+    margin: 0 16px;
+
+    &:link {
+      color: #2196f3;
+
+      .dark-theme & {
+        color: #03a9f4;
+      }
+    }
+
+    &:visited {
+      color: #673ab7;
+
+      .dark-theme & {
+        color: #9c27b0;
+      }
+    }
+  }
+}

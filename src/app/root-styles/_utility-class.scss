@@ -1,0 +1,79 @@
+@use './variables' as *;
+@use '../media-query' as *;
+
+.eb-view {
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+.eb-limit {
+  width: 100%;
+  max-width: ($break-point + ($eb-limit-pc-padding * 2));
+  margin: 0 auto;
+  padding: ($eb-limit-mp-padding + 8px) $eb-limit-mp-padding;
+  box-sizing: border-box;
+}
+
+
+.eb-emoticon {
+  text-align: center;
+  display: block;
+  padding: 80px 16px 0;
+  box-sizing: border-box;
+
+  &-title {
+    font-size: 88px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  &-comment {
+    font-size: 24px;
+    // @include ml.style(color, (foreground, secondary-text));
+  }
+}
+
+.eb-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 8px 16px;
+  // @include ml.style(color, (foreground, secondary-text));
+}
+
+
+.eb-zero-padding {
+  padding: 0 !important;
+}
+.eb-zero-margin {
+  margin: 0 !important;
+}
+
+.eb-flex {
+  display: flex;
+}
+
+.eb-switcher {
+  width: 100%;
+  height: 100%;
+}
+
+@include pc {
+  .eb-limit {
+    padding: $eb-limit-pc-padding;
+  }
+
+  .eb-emoticon {
+    &-title {
+      font-size: 144px;
+      margin-bottom: 24px;
+    }
+
+    &-comment {
+      font-size: 32px;
+    }
+  }
+}

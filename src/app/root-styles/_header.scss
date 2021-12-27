@@ -1,0 +1,63 @@
+@use 'sass:map';
+@use './variables' as *;
+@use '../utils' as *;
+@use '../media-query' as *;
+@use '../mat-theme' as mat;
+
+.rh {
+  position: fixed;
+  z-index: 16;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  $height: $header-mp-height;
+  height: $height;
+
+  background-color: map.get(mat.$primary-palette, default);
+  color: map.get(mat.$primary-palette, default-contrast);
+
+  &-link-wrapper {
+    display: flex;
+    width: 100%;
+  }
+  @include combine('.mat-button') {
+    &-link {
+      line-height: $height;
+      border-radius: 0;
+      flex-grow: 1;
+    }
+  }
+
+
+  &-action-wrapper {
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  @include combine('.mat-icon-button') {
+    &-action {
+      margin: 0 4px;
+    }
+  }
+}
+
+
+@include pc {
+  .rh {
+    $height: $header-pc-height;
+    height: $height;
+  
+    &-link-wrapper {
+      width: auto;
+    }
+
+    @include combine('.mat-button') {
+      &-link {
+        line-height: $height;
+      }
+    }
+  }
+}
